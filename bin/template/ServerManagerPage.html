@@ -1,0 +1,32 @@
+<div class="rightlist" style="display:none;" id="publish_table">
+    <br>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" style="width:10%">选择发布包</label>
+        <div class="col-sm-4">
+            <select id="pakages" class="selectpicker show-tick form-control" data-live-search="true" onclick="onClickGetPakages()">
+                <option value="0">苹果</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="onClickOpenUploadDlg()"> 上传发布包</button>
+    <button type="button" class="btn btn-primary"> 批量发布</button>
+    <table class="table table-bordered table-hover">
+        <caption>发布服务器列表</caption>
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>内网ip</th>
+                <th>外网ip</th>
+                <th>服务名</th>
+                <th>实例id</th>
+                <th>通讯端口</th>
+                <th>部署路径</th>
+                <th>状态</th>
+                <th>上次发布</th>
+            </tr>
+        </thead>
+        <tbody id="publish_serverlist_tbody">
+        </tbody>
+    </table>
+</div>

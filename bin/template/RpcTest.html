@@ -1,0 +1,61 @@
+<script id="RpcTest-template" type="text/x-handlebars-template">
+        <div style="width: 90%">
+            <div class="col-lg-6" style="width:20%">
+                <div class="input-group" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">连接地址</button>
+                    </span>
+                    <input type="text"  class="form-control" id="Rpc_IpPort" value="{{IpPort}}" placeholder="127.0.0.1:8510" onchange="g_IpPort=this.value">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-6" style="width:20%">
+                <div class="input-group" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">ServerId</button>
+                    </span>
+                    <input type="text"  class="form-control" id="Rpc_ServerId" value="{{ServerId}}" name=txt1 onchange="g_ServerId=parseInt(this.value);if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-6" style="width:20%">
+                <div class="input-group" >
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Uid</button>
+                    </span>
+                    <input type="text"  class="form-control" id="Rpc_Uid" value="{{Uid}}" name=txt1 onchange="g_Uid=parseInt(this.value);if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+        </div><!-- /.row -->
+<div style="height:75%;width:75%;overflow:scroll">
+<table class="table table-bordered table-hover">
+    <caption>协议列表</caption>
+    <thead>
+    <tr>
+        <th>模块ID</th>
+        <th>对象名</th>
+        <th>函数名</th>
+        <th>参数列表（json格式）</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+<tbody id="rpctest_list_tbody">
+{{#each RpcList}}
+<tr id="rpcItem_{{rpcid}}">
+    <td><input type="text" class="form-control"  id="Module_{{rpcid}}"  value={{Module}} name=txt1 onchange="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}"></td>
+    <td><input type="text" class="form-control"  id="Object_{{rpcid}}"  value={{Object}}></td>
+    <td><input type="text" class="form-control"  id="Function_{{rpcid}}"  value={{Function}}></td>
+    <td><input type="text" class="form-control"  id="Data_{{rpcid}}"  value={{Data}}></td>
+    <td>
+    <button type="button" class="btn btn-primary"  href="javascript:;" onclick="OnClickExcuteRpc('{{rpcid}}')")> 执行</button>
+    <button type="button" class="btn btn-primary"  href="javascript:;" onclick="OnClickSaveRpc('{{rpcid}}')")> 保存</button>
+    <button type="button" class="btn btn-primary"  href="javascript:;" onclick="OnClickDelRpc('{{rpcid}}')")> 删除</button>
+        <button type="button" class="btn btn-primary"  href="javascript:;" onclick="OnClickNewRpc()")> 新增</button>
+    </td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+<textarea id="RpcTest_RetContent" style="position:absolute;top:100px;left:80%;width:24%;min-height:800px">
+</textarea>
+</script>

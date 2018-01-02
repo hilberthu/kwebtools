@@ -1,0 +1,39 @@
+<!-- 节点管理模版-->
+<script id="NodeList-template" type="text/x-handlebars-template">
+    <table class="table table-bordered table-hover">
+        <caption>机器资产列表</caption>
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>节点ID</th>
+                <th>内网ip</th>
+                <th>外网ip</th>
+                <th>最后心跳时间</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody id="nodemanager_list_tbody">
+            <tr>
+                {{#each NodeList}}
+                <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="nodecheck_{{Innerip}}" name="nodecheck" value="nodecheck_{{Innerip}}" />
+                        </label>
+                    </div>
+                </td>
+                <td>{{NodeId}}</td>
+                <td>{{Innerip}}</td>
+                <td>{{Outerip}}</td>
+                <td class="alert {{alertstyle}}">{{StatusString}}</td>
+                <td>
+                    <input type="text" value="{{Remarks}}" name="nodeRemarks_{{Innerip}}" />
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" href="javascript:;" onclick="SaveRemaks()">保存</button>
+    <button type="button" class="btn btn-success" href="javascript:;" onclick="DelNodes()">删除</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" href="#myModal" onclick="onClickPushFile()" >文件推送</button>
+</script>

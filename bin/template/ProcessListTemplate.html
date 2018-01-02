@@ -1,0 +1,53 @@
+<!-- 服务器列表模版-->
+<script id="processList-template" type="text/x-handlebars-template">
+<button type="button" class="btn btn-primary" data-toggle="modal" href="#ProcessEditWind" > 新增</button>
+    <div style="overflow:scroll">
+        <table style="" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>选择</th>
+                    <th >内网ip</th>
+                    <th >外网ip</th>
+                    <th >服务器名</th>
+                    <th>实例ID</th>
+                    <th >运行目录                        </th>
+                    <th>通讯端口</th>
+                    <th>状态</th>
+                    <th>最后心跳时间</th>
+                    <th>其他</th>
+                    <th style="width:10%">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    {{#each processList}}
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox">
+                                </label>
+                            </div>
+                        </td>
+                    <td>{{Innerip}}</td>
+                    <td>{{Outerip}}</td>
+                    <td>{{ServerName}}</td>
+                    <td>{{Insid}}</td>
+                    <td >{{Path}}</td>
+                    <td>{{Port}}</td>
+                    <td>{{Status}}</td>
+                    <td class="alert {{alertstyle}}">{{Lastupdatetime}}</td>
+                    <td>{{Other}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" href="#ProcessEditWind" onclick="onEditProcess('{{ServerName}}','{{Insid}}','{{Innerip}}')"> 编辑</button>
+                        <button type="button" class="btn btn-primary"   onclick="onDeleteProcess('{{ServerName}}','{{Insid}}')"> 删除</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+     <div>
+
+        </div>
+</script>

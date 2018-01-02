@@ -1,0 +1,70 @@
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                创建新服务
+                </h4>
+            </div>
+            <div class="input-group createbuttoninput">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">节点
+                    <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {{range  .}}
+                        <li onclick="OnClickNode({{.}})" id="{{.}}">
+                            <a href="#">{{.}}</a>
+                        </li>
+                        {{end}}
+                    </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" class="form-control" id="InputNode">
+                    
+                </div>
+                <br>
+
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">服务名</span>
+                    <input type="text" class="form-control" id="InputServerName">
+                </div>
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">实例ID</span>
+                    <input type="text" class="form-control" id="InputInsId">
+                </div>
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">通讯端口</span>
+                    <input type="text" class="form-control" id="InputPort">
+                </div>
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">部署路径</span>
+                    <input type="text" class="form-control" id="InputPath">
+                </div>
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">外网ip地址</span>
+                    <input type="text" class="form-control" id="InputOuterIp">
+                </div>
+                <br>
+                <div class="input-group createbuttoninput">
+                    <span class="input-group-addon">备注</span>
+                    <input type="text" class="form-control" id="InputOther">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="OnSubmitCreateNewServer()">
+                    提交更改
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

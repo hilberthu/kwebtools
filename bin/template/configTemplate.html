@@ -1,0 +1,42 @@
+<!-- 节点管理模版-->
+<script id="ConfigTemplateList-template" type="text/x-handlebars-template">
+    <div>
+    <caption>已有模版</caption>
+    <div style="position:absolute; width:700px;height:800px;overflow:scroll;">
+        <table class="table table-bordered table-hover" id="table_allConfigTemplate">
+            <thead>
+                <tr>
+                    <th>选择</th>
+                    <th>模板类型</th>
+                    <th>模板名</th>
+                    <th>最后编辑时间</th>
+                    <th>备注</th>
+                    <th>编辑</th>
+                </tr>
+            </thead>
+            <tbody id="configtemplate_list_tbody">
+                <tr>
+                    {{#each ConfigTemplateList}}
+                    <td>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="templatelistcheck_{{TemplateName}}" name="templatelistcheck_" value="templatelistcheck__{{TemplateName}}" />
+                            </label>
+                        </div>
+                    </td>
+                    <td>{{TemplateType}}</td>
+                    <td>{{TemplateName}}</td>
+                    <td>{{EditTime}}</td>
+                    <td>{{Remarks}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="button" id="{{TemplateName}}_Edit" href="javascript:;" onclick="updateConfigEditWind('{{TemplateName}}')"> 编辑</button>
+                        <button type="button" class="btn btn-primary" data-toggle="button" id="{{TemplateName}}_Edit" href="javascript:;" onclick="delConfigEditWind('{{TemplateName}}')"> 删除</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+    <!--display:none;-->
+</script>

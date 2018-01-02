@@ -1,0 +1,60 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    文件推送
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">文件选择</label>
+                    <div class="col-sm-4">
+                        <select id="usertype" name="usertype" class="selectpicker show-tick form-control" multiple data-live-search="false">
+                            <option value="0">苹果</option>
+                            <option value="1">菠萝</option>
+                            <option value="2">香蕉</option>
+                            <option value="3">火龙果</option>
+                            <option value="4">梨子</option>
+                            <option value="5">草莓</option>
+                            <option value="6">哈密瓜</option>
+                            <option value="7">椰子</option>
+                            <option value="8">猕猴桃</option>
+                            <option value="9">桃子</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>内网IP</th>
+                            <th>外网IP</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nodemanager_list_tbody">
+                        <tr>
+                            {{#each NodeList}}
+                            <td>{{Innerip}}</td>
+                            <td>{{Outerip}}</td>
+                            <td class="alert {{alertstyle}}"></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    推送
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>

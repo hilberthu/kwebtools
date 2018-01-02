@@ -1,0 +1,49 @@
+<script id="ProcessEdit-template" type="text/x-handlebars-template">
+    <div id="ProcessEditWind" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                    进程编辑
+                </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group" style="width:90%">
+                        <div class="form-group">
+                            <lable>服务器名</lable>
+                            <select class="input-large form-control" id="ProcessEdit_ServerNameList">
+                                {{#each ServerNameList}}
+                                <option name="process_list_name" value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <lable>内网IP</lable>
+                            <select class="input-large form-control" id="ProcessEdit_InnerIpList">
+                                {{#each InnerIpList}}
+                                <option value="{{Innerip}}">{{Innerip}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <lable>实例ID</lable>
+                            <input type="text" class="form-control" id="ProcessEdit_InsId" value="">
+                        </div>
+                        <lable>配置文件内容</lable>
+                        <textarea id="ProcessConfigFileEdit_content" style="width:100%;min-height:500px">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" href="javascript:;" onclick="CompileConfigTemplate('#ProcessConfigFileEdit_content')">编译配置</button>
+                    <!--button type="button" class="btn btn-success" href="javascript:;" onclick="CompileConfigTemplate()">应用模版</button-->
+                    <button type="button" class="btn btn-success" href="javascript:;" onclick="CompileAndSaveProcessConfigContent()">修改并保存</button>
+                    <button type="button" class="btn btn-success" href="javascript:;" onclick="CompileAndAddProcessConfigContent()">新增并保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

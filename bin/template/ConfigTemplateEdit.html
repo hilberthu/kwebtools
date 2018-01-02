@@ -1,0 +1,25 @@
+<div id="ConfigEditWind" style="position:absolute;top:50px;left:750px">
+    <div class="input-group" style="width:400px">
+        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">模版名</button>
+            </span>
+        <input type="text" class="form-control" id="ConfigEditWind_TemplateName" value="alian">
+        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">备注</button>
+            </span>
+        <input type="text" class="form-control" id="ConfigEditWind_Remarks" value="alian">
+    </div>
+    <div class="dropdown">
+        <label class="radio-inline">
+            <input type="radio" name="optionsRadiosinline" id="ConfigEditWind_ConfigType_Small" value="1" checked> 小模版
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="optionsRadiosinline" id="ConfigEditWind_ConfigType_big" value="0" checked> 进程模版
+        </label>
+    </div>
+    <!-- /input-group -->
+    <textarea id="ConfigEditWind_content" style="width:500px;min-height:500px">
+    </textarea>
+    <button type="button" class="btn btn-success" href="javascript:;" onclick="CompileConfigTemplate('#ConfigEditWind_content')">编译模版</button>
+    <button type="button" class="btn btn-success" href="javascript:;" onclick="CompileAndSaveConfigTemplate()">保存</button>
+</div>

@@ -1,0 +1,23 @@
+
+
+{{range  .}}
+<tr>
+  <td><div class="checkbox">
+    <label>
+      <input type="checkbox">
+    </label>
+  </div>
+</td>
+
+<td>{{.Innerip}}</td>
+<td>{{.Outerip}}</td>
+<td>{{.Servername}}</td>
+<td>{{.Insid}}</td>
+<td>{{.Port}}</td>
+<td>{{.Path}}</td>
+<td class="alert alert-success">{{.StatusString}}</td>
+<td>
+  
+</td>
+</tr>
+{{end}}
