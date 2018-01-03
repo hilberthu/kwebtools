@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-12-18 11:25:50
+Date: 2018-01-03 20:43:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -66,4 +66,15 @@ CREATE TABLE `processlist` (
   `Lastupdatetime` int(64) NOT NULL,
   `Other` varchar(156) NOT NULL,
   PRIMARY KEY (`Insid`,`ServerName`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for rpclist
+-- ----------------------------
+DROP TABLE IF EXISTS `rpclist`;
+CREATE TABLE `rpclist` (
+  `Module` int(11) NOT NULL,
+  `Object` varchar(255) NOT NULL,
+  `Function` varchar(255) NOT NULL,
+  `Data` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
